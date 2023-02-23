@@ -1,0 +1,56 @@
+﻿<Window x:Class="projektarbeit_Pizzashop.KundeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projektarbeit_Pizzashop"
+        mc:Ignorable="d"
+        Title="Kunden bearbeiten" MinHeight="703" MinWidth="1000" WindowState="Maximized">
+    <Grid>
+        <Rectangle Height="Auto" Stroke="Black" Width="Auto" Fill="#E52B2B2B" StrokeThickness="6"/>
+        <Label Content="Kunden bearbeiten" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="63" Margin="0,10,0,0" Width="554" FontFamily="Copperplate Gothic Bold" FontSize="48" VerticalAlignment="Top" Foreground="White"/>
+        <StackPanel Margin="500,98,35,34">
+            <Label Content="Nachname" HorizontalContentAlignment="Center" FontFamily="Copperplate Gothic Bold" Foreground="White" FontSize="16"/>
+            <TextBox x:Name="tbxNachname" TextWrapping="Wrap" HorizontalContentAlignment="Center" Width="Auto" FontFamily="Copperplate Gothic Bold" FontSize="14" BorderBrush="Black" BorderThickness="2,2,2,2"/>
+            <Label Content="Vorname" HorizontalContentAlignment="Center" FontFamily="Copperplate Gothic Bold" Foreground="White" FontSize="16"/>
+            <TextBox x:Name="tbxVorname" TextWrapping="Wrap" HorizontalContentAlignment="Center" Width="Auto" FontFamily="Copperplate Gothic Bold" FontSize="14" BorderBrush="Black" BorderThickness="2,2,2,2"/>
+            <Label Content="Geburtsdatum" HorizontalContentAlignment="Center" FontFamily="Copperplate Gothic Bold" Foreground="White" FontSize="16"/>
+            <TextBox x:Name="tbxGeburtsdatum" TextWrapping="Wrap" HorizontalContentAlignment="Center" Width="Auto" FontFamily="Copperplate Gothic Bold" FontSize="14" BorderBrush="Black" BorderThickness="2,2,2,2" GotFocus="FocusGotten" LostFocus="FocusLost" Text="Z.B. 23.01:2023"/>
+            <Label Content="E-Mail" HorizontalContentAlignment="Center" FontFamily="Copperplate Gothic Bold" Foreground="White" FontSize="16"/>
+            <TextBox x:Name="tbxEmail" TextWrapping="Wrap" HorizontalContentAlignment="Center" Width="Auto" FontFamily="Copperplate Gothic Bold" FontSize="14" BorderBrush="Black" BorderThickness="2,2,2,2"/>
+            <Label Content="Telefonnummer" HorizontalContentAlignment="Center" FontFamily="Copperplate Gothic Bold" Foreground="White" FontSize="16"/>
+            <TextBox x:Name="tbxTelefon" TextWrapping="Wrap" HorizontalContentAlignment="Center" Width="Auto" FontFamily="Copperplate Gothic Bold" FontSize="14" BorderBrush="Black" BorderThickness="2,2,2,2"/>
+            <Label Content="Adressen" HorizontalContentAlignment="Center" FontFamily="Copperplate Gothic Bold" Foreground="White" FontSize="16"/>
+            <Grid Height="50" Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="Strasse" HorizontalContentAlignment="Center" FontFamily="Copperplate Gothic Bold" Foreground="White" FontSize="16"/>
+                <Label Grid.Column="1" Grid.Row="0" Content="PLZ" HorizontalContentAlignment="Center" FontFamily="Copperplate Gothic Bold" Foreground="White" FontSize="16"/>
+                <Label Grid.Column="2" Grid.Row="0" Content="Ort" HorizontalContentAlignment="Center" FontFamily="Copperplate Gothic Bold" Foreground="White" FontSize="16"/>
+                <TextBox VerticalContentAlignment="Center" x:Name="tbxStrasse" Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="2,2,2,2" FontFamily="Copperplate Gothic Bold"></TextBox>
+                <TextBox VerticalContentAlignment="Center" x:Name="tbxPlz" Grid.Column="1" Grid.Row="1" BorderBrush="#FF000106" BorderThickness="2,2,2,2" FontFamily="Copperplate Gothic Bold"></TextBox>
+                <TextBox VerticalContentAlignment="Center"  x:Name="tbxOrt" Grid.Column="2" Grid.Row="1" BorderBrush="Black" BorderThickness="2,2,2,2" FontFamily="Copperplate Gothic Bold"></TextBox>
+            </Grid>
+            <Button x:Name="btnAddAdresse" Content="Hinzufügen" BorderBrush="Black" Background="White" FontFamily="Copperplate Gothic Bold" FontSize="14" BorderThickness="2,2,2,2" Height="30" VerticalAlignment="Top" Click="btnAddAdresse_Click"></Button>
+            <ListView Margin="0,10,0,10" Height="110" x:Name="lstAdressen" FontFamily="Copperplate Gothic Bold" Width="Auto" HorizontalContentAlignment="Stretch" Padding="0,2,0,0"/>
+            <Button x:Name="btnAdresseLoeschen" Height="30" Content="Löschen" BorderBrush="Black" Background="White" FontFamily="Copperplate Gothic Bold" FontSize="14" BorderThickness="2,2,2,2" Margin="0,0,0,96" Click="btnAdresseLoeschen_Click"/>
+        </StackPanel>
+        <Button x:Name="btnHinzufuegen" Content="Hinzufügen" Height="42" VerticalAlignment="Bottom" Width="134" Background="#FF262626" BorderBrush="Black" Foreground="White" FontFamily="Copperplate Gothic Bold" BorderThickness="3,3,3,3" Margin="41,0,0,74" HorizontalAlignment="Left" Click="btnHinzufuegen_Click"/>
+        <Button x:Name="btnLoeschen" Content="Löschen" Height="42" VerticalAlignment="Bottom" Width="134" Background="#FF262626" BorderBrush="Black" Foreground="White" FontFamily="Copperplate Gothic Bold" BorderThickness="3,3,3,3" Margin="190,0,0,74" HorizontalAlignment="Left" Click="btnLoeschen_Click"/>
+        <Button x:Name="btnUpdate" Content="Updaten" Height="42" VerticalAlignment="Bottom" Width="134" Background="#FF262626" BorderBrush="Black" Foreground="White" FontFamily="Copperplate Gothic Bold" BorderThickness="3,3,3,3" Margin="338,0,0,74" HorizontalAlignment="Left" Click="btnUpdate_Click"/>
+        <ListBox x:Name="lstKunden" SelectionMode="Single" d:ItemsSource="{d:SampleData ItemCount=5}" Foreground="Black" BorderBrush="Black" BorderThickness="3,3,3,3" FontFamily="Copperplate Gothic Bold" FontSize="16" HorizontalAlignment="Left" Width="431" Margin="41,117,0,140" SelectionChanged="lstKunden_SelectionChanged"/>
+        <Button x:Name="btnSuche" Content="Suchen" BorderBrush="Black" FontFamily="Copperplate Gothic Bold" FontSize="14" BorderThickness="3,3,3,0" VerticalAlignment="Top" Height="19" Margin="380,98,0,0" Background="White" HorizontalAlignment="Left" Width="92" Click="btnSuche_Click"/>
+        <TextBox x:Name="tbxSuche" TextWrapping="Wrap" HorizontalContentAlignment="Center" Width="339" FontFamily="Copperplate Gothic Bold" FontSize="14" BorderBrush="Black" BorderThickness="3,3,0,0" Margin="41,98,0,0" Background="White" Height="19" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/pizza.png"/>
+        </Grid.Background>
+    </Grid>
+</Window>
